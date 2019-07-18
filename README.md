@@ -1,10 +1,9 @@
 # 函数计算工具库
 
-## 使用
-'''shell
+## 安装使用
+``` shell
 pip install fcutils
-'''
-
+```
 ## FCHttpUtils
 #### getData(host)
 发送get请求获取数据
