@@ -43,7 +43,7 @@ pub_key：公钥
 解密结果
 
 ## OSSUtils
-#### \_\_init__(self, accessKeyId, accessKeySecret, bucketName, endpoint)
+#### \_\_init__(accessKeyId, accessKeySecret, bucketName, endpoint)
 - 参数  
 accessKeyId: 阿里云accessKeyId  
 accessKeySecret: 阿里云accessKeySecret  
