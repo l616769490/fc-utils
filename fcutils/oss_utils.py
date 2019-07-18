@@ -90,7 +90,3 @@ class ChengduOSS(OSSUtils):
 class HongkongOSS(OSSUtils):
     def __init__(self, accessKeyId, accessKeySecret, bucketName):
         super(HongkongOSS, self).__init__(accessKeyId, accessKeySecret, bucketName, _HONGKONG)
-
-if __name__ == '__main__':
-    ossutils = ShanghaiOSS('LTAI4QwuEHvGYNd1', 'AA33gx3XlMshHooL9Jkcd3AUp76CKy', '86lvyou')
-    print(ossutils.getFileList('conf/'))
