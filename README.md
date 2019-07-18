@@ -45,6 +45,7 @@ accessKeyId: 阿里云accessKeyId
 accessKeySecret: 阿里云accessKeySecret  
 bucketName: bucket名字
 #### getFileList(path)
+获取文件列表
 - 参数  
 dirName: 父路径
 - 返回值  
@@ -52,12 +53,14 @@ status：成功返回200，失败返回错误码
 data：成功返回数据，失败返回错误信息
 
 #### getFileByName(path)
+获取文件内容
 - 参数  
 path: 文件路径
 - 返回值  
 status：成功返回200，失败返回错误码  
 data：成功返回数据，失败返回错误信息
 #### updateFile(data, path)
+更新文件，没有则新建
 - 参数  
 path: 文件路径
 - 返回值  
