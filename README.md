@@ -1,7 +1,7 @@
 # 函数计算工具库
 
 ## 使用
-''' shell
+'''shell
 pip install fcutils
 '''
 
