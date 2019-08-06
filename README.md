@@ -44,10 +44,11 @@ pub_key：公钥
 
 ## OSSUtils
 #### \_\_init__(accessKeyId, accessKeySecret, bucketName, endpoint)
-- 参数  
+-参数  
 accessKeyId: 阿里云accessKeyId  
 accessKeySecret: 阿里云accessKeySecret  
 bucketName: bucket名字
+
 #### getFileList(path)
 获取文件列表
 - 参数  
@@ -80,9 +81,9 @@ salt: 盐值
 - 返回值  
 加密后的密码
 #### createSalt(length = 6)
-生成盐值
+生成随机的盐值
 - 参数  
-length: 盐值长度
+length: 需要生成的盐值长度
 - 返回值  
 盐值
 

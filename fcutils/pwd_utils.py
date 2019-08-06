@@ -31,3 +31,9 @@ class PwdUtils(object):
 __pwd_utils = PwdUtils()
 createPwd = __pwd_utils.createPwd
 createSalt = __pwd_utils.createSalt
+
+if __name__ == '__main__':
+    pwd = PwdUtils()
+    salt = pwd.createSalt()
+    print(salt)
+    print(pwd.createPwd('123456', salt))
