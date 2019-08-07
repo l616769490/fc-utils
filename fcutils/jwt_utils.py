@@ -55,6 +55,6 @@ class JwtUtils(object):
 __jwt_utils = JwtUtils()
 encode = __jwt_utils.encode
 decode = __jwt_utils.decode
-timelateForDay = __jwt_utils.timeLaterForDay
-timelaterForHour = __jwt_utils.timeLaterForHour
+timeLaterForDay = __jwt_utils.timeLaterForDay
+timeLaterForHour = __jwt_utils.timeLaterForHour
 timeLater = __jwt_utils.timeLater
