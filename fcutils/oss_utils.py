@@ -38,30 +38,21 @@ class OSSUtils(object):
     def getFileByName(self, path):
         """ 获取文件内容,utf-8编码
         :param path: 文件路径
-        :return status：成功返回200，失败返回错误码
-        :return data：成功返回数据，失败返回错误信息
+        :return 成功返回数据，失败返回None
         """
         try:
             remote_stream = self.bucket.get_object(path)
             data = str(remote_stream.read(), encoding = 'utf-8')
-            return '200', data
+            return data
         except Exception as err:
-            return err.status, err.message
+            return None
     
     def updateFile(self, data, path):
         """ 修改或者新增文件
         :param data: 文件内容
         :param path: 文件路径
-        :return: {status, data} status：成功返回200，失败返回500; data：成功返回数据，失败返回错误信息
         """
-        if (data == None):
-            return '400', '传入的内容不能为空'
-
-        try:
-            self.bucket.put_object(path, data)
-            return '200', '新增或修改成功'
-        except Exception as err:
-            return err.status, err.message
+        return self.bucket.put_object(path, data)
 
 class ShanghaiOSS(OSSUtils):
     def __init__(self, accessKeyId, accessKeySecret, bucketName):

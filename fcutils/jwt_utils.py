@@ -22,9 +22,9 @@ class JwtUtils(object):
         '''
         try:
             info = jwt.decode(encoded_str, pub_key, algorithm='RS256')
-            return {'message':'success', 'data':{'decode_str':info}}
+            return info
         except DecodeError as e:
-            return {'message':'fail', 'data':{'msg':'签名错误'}}
+            return None
 
     def timeLaterForDay(self, day = 30):
         """ 生成签名过期时间，默认一个月
