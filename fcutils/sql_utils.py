@@ -1,4 +1,5 @@
 import json
+
 def joinList(arr, prefix = '`', suffix = '`', delimiter=' , '):
     """ 用指定的分隔符连接数组，可以加上特定前缀和后缀
     --

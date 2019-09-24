@@ -1,4 +1,4 @@
-__version__ = '0.3.6'
+__version__ = '0.3.8'
 
 from .http_utils import (
     getData, getDataForJson, getDataForStr, FCHttpUtils
