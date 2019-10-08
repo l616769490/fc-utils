@@ -1,7 +1,7 @@
-__version__ = '0.3.8'
+__version__ = '0.4.0'
 
 from .http_utils import (
-    getData, getDataForJson, getDataForStr, FCHttpUtils
+    getData, getDataForJson, getDataForStr
 )
 from .jwt_utils import (
     encode, decode, timeLaterForDay, timeLaterForHour, timeLater
@@ -14,5 +14,9 @@ from .pwd_utils import (
 )
 
 from .sql_utils import (
-    joinList, pers, fieldStrFromList, fieldStr, fieldSplit, toJson
+    joinList, pers, fieldStrFromList, fieldStr, fieldSplit, toJson, fieldStrAndPer
+)
+
+from .utils import (
+    dataToJson, dataToStr
 )
