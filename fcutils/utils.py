@@ -16,13 +16,15 @@ def dataToJson(data):
             except :
                 return data
         return data
-    elif isinstance(data, list):
+    elif isinstance(data, list) or isinstance(data, tuple):
         for item in data:
             item = dataToJson(item)
         return data
     elif isinstance(data, dict):
         for k, v in data.items():
             data[k] = dataToJson(v)
+        return data
+    elif isinstance(data, int) or isinstance(data, float):
         return data
     else:
         return str(data)
