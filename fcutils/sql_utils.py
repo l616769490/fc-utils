@@ -70,8 +70,17 @@ def fieldStrAndPer(d):
     for k, v in d.items():
         if v != None:
             l1.append(k)
-            lper.append('%s')
-            l2.append(dataToStr(v))
+            noAppend = True # 标记lper和l2还未赋值
+            if isinstance(l2, str):
+                if v.startswith('+') or v.startswith('-') or v.startswith('*') or v.startswith('/'):
+                    vv = dataToFloat(v[1:])
+                    if vv:
+                        noAppend = False
+                        lper.append('{}{}%s'.format(k, v[:1]))
+                        l2.append(vv)
+            if noAppend:
+                lper.append('%s')
+                l2.append(dataToStr(v))
 
     return fieldStrFromList(l1, lper, vPrefix='', vSuffix=''), l2
 
@@ -106,7 +115,8 @@ def dataToJson(data):
 
         @return list, dict 或 str类型
     """
-    if data == None:
+    from decimal import Decimal
+    if data == None or isinstance(data, int) or isinstance(data, float) or isinstance(data, bool):
         return data
     elif isinstance(data, str):
         if data.startswith('{') and data.endswith('}') or data.startswith('[') and data.endswith(']'):
@@ -115,7 +125,7 @@ def dataToJson(data):
             except :
                 return data
         return data
-    elif isinstance(data, list):
+    elif isinstance(data, list) or isinstance(data, tuple):
         for item in data:
             item = dataToJson(item)
         return data
@@ -123,6 +133,8 @@ def dataToJson(data):
         for k, v in data.items():
             data[k] = dataToJson(v)
         return data
+    elif isinstance(data, Decimal):
+        return float(data)
     else:
         return str(data)
 
@@ -136,4 +148,16 @@ def dataToStr(data):
     if isinstance(data, list) or isinstance(data, dict):
         return json.dumps(dataToJson(data))
     
+    if isinstance(data, int) or isinstance(data, float):
+        return data
+    
+    if not data:
+        return ''
+    
     return str(data)
+
+def dataToFloat(data):
+    try:
+        return float(data)
+    except Exception as e:
+        return False
