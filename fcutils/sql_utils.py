@@ -71,7 +71,7 @@ def fieldStrAndPer(d):
         if v != None:
             l1.append(k)
             noAppend = True # 标记lper和l2还未赋值
-            if isinstance(l2, str):
+            if isinstance(v, str):
                 if v.startswith('+') or v.startswith('-') or v.startswith('*') or v.startswith('/'):
                     vv = dataToFloat(v[1:])
                     if vv:
