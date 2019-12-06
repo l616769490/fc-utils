@@ -7,6 +7,8 @@ import json
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 
+__all__ = ['sendMessage']
+
 
 def sendMessage(accessKeyId, accessSecret, phoneNumbers, signName, templateCode, templateParam=None):
     ''' 发送短信

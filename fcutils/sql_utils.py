@@ -1,5 +1,10 @@
 import json
 
+__all__ = ['joinList', 'pers', 'fieldStrFromList',
+           'fieldStr', 'fieldStrAndPer',
+           'fieldSplit', 'toJson', 'dataToJson',
+           'dataToStr', 'dataToFloat']
+
 def joinList(arr, prefix = '`', suffix = '`', delimiter=' , '):
     """ 用指定的分隔符连接数组，可以加上特定前缀和后缀
     --
